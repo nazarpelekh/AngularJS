@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<!--
+    ng-app - att show, that html has modules which we process in AngularJS
+-->
+
+<html ng-app="helloWorldApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script src="Libraries/angular.js"></script>
+    <script>
+
+        // Model
+        var model = "Hello world";
+
+
+        // Create new module helloWorldApp
+        var helloWorldApp = angular.module('helloWorldApp', []);
+
+        // Create controller with ending Ctrl, and second option is controller function
+        helloWorldApp.controller('HelloWorldCtrl', function ($scope) {
+            $scope.message = model;
+        })
+
+    </script>
+</head>
+<!-- ng-controller - attr which is controlled by controller -->
+<body ng-controller="HelloWorldCtrl">
+    <h1>{{message}}</h1>
+</body>
+</html>

@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="helloWorldApp">
 <head>
     <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+    <title>Hello World</title>
+    <script src="Libraries/angular.js"></script>
+    <script>
 
+        // Model
+        var model = "Hello World";
+
+        var helloWorldApp = angular.module('helloWorldApp', []);
+
+        // Controller
+        helloWorldApp.controller('HelloWorldCtrl', function($scope){
+            $scope.message = model;
+
+            // Behavior
+            $scope.clickHandler = function(){
+                $scope.message = $scope.text;
+            }
+        })
+
+    </script>
+</head>
+<body ng-controller="HelloWorldCtrl">
+    <h1>{{message}}</h1>
+    <!-- ng-model - this is the field, which connect to property $scope.text -->
+    <input ng-model="text">
+    <!-- ng-click - create click function -->
+    <button ng-click="clickHandler()">Refresh</button>
 </body>
 </html>

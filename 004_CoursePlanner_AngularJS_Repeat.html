@@ -12,11 +12,11 @@
         var model = {
             user: "User1",
             courses: [
-                { name: "HTML, CSS", passed: true },
-                { name: "JS Essential", passed: true },
-                { name: "JS Advanced", passed: true },
-                { name: "HTML5 &amp; CSS3", passed: true },
-                { name: "AngularJS", passed: true }
+                { name: "HTML, CSS", passed: 'Yes' },
+                { name: "JS Essential", passed: 'Yes' },
+                { name: "JS Advanced", passed: 'Yes' },
+                { name: "HTML5 &amp; CSS3", passed: 'Yes' },
+                { name: "AngularJS", passed: 'No' }
             ]
         };
 
@@ -25,7 +25,7 @@
 
         // Controller
         courseListApp.controller('CourseListCtrl', function($scope){
-            $scope.list = model;
+            $scope.data = model;
         })
 
     </script>
@@ -37,7 +37,7 @@
             <h1>
                 Планировщик курсов
             </h1>
-            <h3>Пользователь: {{list.user}}. Количество курсов - {{list.courses.length}}</h3>
+            <h3>Пользователь: {{data.user}}. Количество курсов - {{data.courses.length}}</h3>
         </div>
     </div>
     <div class="panel">
@@ -56,26 +56,11 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>HTML, CSS</td>
-                <td>Yes</td>
-            </tr>
-            <tr>
-                <td>JS Essential</td>
-                <td>Yes</td>
-            </tr>
-            <tr>
-                <td>JS Advanced</td>
-                <td>Yes</td>
-            </tr>
-            <tr>
-                <td>HTML5, CSS3</td>
-                <td>No</td>
-            </tr>
-            <tr>
-                <td>AngularJS</td>
-                <td>No</td>
-            </tr>
+                <!-- ng-repeat - show, that this is repeater -->
+                <tr ng-repeat="course in data.courses">
+                    <td>{{course.name}}</td>
+                    <td>{{course.passed}}</td>
+                </tr>
             </tbody>
         </table>
     </div>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="SampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>One way data-binding</title>
+    <script src="../../Libraries/angular.js"></script>
+    <script>
+        var app = angular.module('SampleApp',[]);
+
+        app.controller('SampleAppCtrl', function ($scope) {
+            $scope.items = [{ name: "Item 1", value: "Value 1"},
+                { name: "Item 2", value: "Value 2"},
+                { name: "Item 3", value: "Value 3"}]
+        })
+    </script>
+</head>
+<body>
+    <div ng-controller="SampleAppCtrl">
+        <!-- {{}} - one way connect from model to view -->
+        <div>There are {{items.length}} items {{items[0].name}}</div>
+
+        <!-- ng-bind заміняє дані на отримані -->
+        <div>
+            There are <span ng-bind="items.length"></span> items
+        </div>
+
+        <!-- ng-bind-template - може мати декілька {{}} значень -->
+        <div ng-bind-template="First item: {{items[0].name}}. Second item: {{items[1].name}}"></div>
+
+        <!-- ng-non-bindable - вказує на те, що лані не повинні компілюватись і показується так, як і в html -->
+        <div ng-non-bindable>
+            AngularJS uses {{and}} characters
+        </div>
+    </div>
+</body>
+</html>

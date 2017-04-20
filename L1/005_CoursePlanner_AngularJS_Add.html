@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Планировшик курсов</title>
-    <script src="Libraries/angular.js"></script>
-    <link rel="stylesheet" href="Libraries/bootstrap.css">
-    <link rel="stylesheet" href="Libraries/bootstrap-theme.css">
+    <script src="../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../Libraries/bootstrap.css">
+    <link rel="stylesheet" href="../Libraries/bootstrap-theme.css">
     <script>
 
         // Model
@@ -15,8 +15,8 @@
                 { name: "HTML, CSS", passed: 'Yes' },
                 { name: "JS Essential", passed: 'Yes' },
                 { name: "JS Advanced", passed: 'Yes' },
-                { name: "HTML5 &amp; CSS3", passed: false },
-                { name: "AngularJS", passed: false }
+                { name: "HTML5 &amp; CSS3", passed: 'Yes' },
+                { name: "AngularJS", passed: 'No' }
             ]
         };
 
@@ -36,15 +36,7 @@
                 });
 
                 $scope.courseName = '';
-            };
-
-            $scope.showText = function (passed) {
-                return passed ? 'Yes' : 'No';
-            };
-
-            $scope.setStyle = function (passed) {
-                return passed ? 'color:green' : 'color:red; font-weight: bold';
-            };
+            }
         })
 
     </script>
@@ -71,7 +63,6 @@
             <thead>
             <tr>
                 <th>Курс</th>
-                <th></th>
                 <th>Пройден</th>
             </tr>
             </thead>
@@ -79,13 +70,7 @@
             <!-- ng-repeat - show, that this is repeater -->
             <tr ng-repeat="course in data.courses">
                 <td>{{course.name}}</td>
-                <!-- checkbox using directive ng-model and connect to property 'passed' -->
-                <td><input type="checkbox" ng-model="course.passed"></td>
-                <td>
-                    <span style="{{setStyle(course.passed)}}">
-                        {{showText(course.passed)}}
-                    </span>
-                </td>
+                <td>{{course.passed}}</td>
             </tr>
             </tbody>
         </table>

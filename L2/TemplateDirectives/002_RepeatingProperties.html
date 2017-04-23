@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Template directives</title>
+
+    <!--
+        Template directives - collection of directives, which we can use for generation HTML
+        ng-repeat
+        ng-include
+        ng-cloack
+        ng-repeat-start
+        ng-repeat-end
+        ng-swich
+    -->
+
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+
+    <script>
+        var app = angular.module('SampleApp',[]);
+
+        app.controller('SampleAppCtrl', function ($scope) {
+            $scope.items = [{ name: "Item1", value: "Value1", property1: "Test Val 1"},
+                { name: "Item2", value: "Value2", property1: "Test Val 2"},
+                { name: "Item3", value: "Value3", property1: "Test Val 3"}]
+        })
+    </script>
+</head>
+<body>
+<div ng-controller="SampleAppCtrl">
+    <h3 class="panel-header">Items</h3>
+
+    <!-- <p ng-repeat="item in items"> - create paragraph for each elements in items -->
+    <p ng-repeat="item in items">
+        <!-- <span ng-repeat="property in item"> - create span for each property in item -->
+        <span ng-repeat="property in item">{{property}}, </span>
+    </p>
+</div>
+</body>
+</html>

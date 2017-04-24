@@ -39,23 +39,23 @@
     </style>
 </head>
 <body>
-<div ng-controller="SampleAppCtrl">
+<div ng-controller="SampleAppCtrl" class="container">
     <h3 class="panel-header">Items</h3>
 
     <table class="table">
         <thead>
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Value</th>
-        </tr>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Value</th>
+            </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="item in items">
-            <td>{{$index+1}}</td> <!-- $index integrate variable which consist of iteration number -->
-            <td>{{item.name}}</td>
-            <td>{{item.value}}</td>
-        </tr>
+            <tr ng-repeat="item in items" ng-class="$even ? 'class1' : 'class2' ">
+                <td>{{$index+1}}</td> <!-- $index integrate variable which consist of iteration number -->
+                <td>{{item.name}}</td>
+                <td>{{item.value}}</td>
+            </tr>
         </tbody>
     </table>
 

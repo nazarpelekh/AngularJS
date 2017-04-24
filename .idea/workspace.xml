@@ -32,11 +32,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="002_RepeatingProperties.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="002_RepeatingProperties.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/002_RepeatingProperties.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8509934">
-              <caret line="37" column="57" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
+            <state vertical-scroll-proportion="-10.625">
+              <caret line="17" column="64" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="003_RepeateKeyValue.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/003_RepeateKeyValue.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.916666">
+              <caret line="35" column="32" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="004_$index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/004_$index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.791667">
+              <caret line="29" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="005_EvenOdd.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/005_EvenOdd.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7764901">
+              <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -92,36 +122,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="006_FirstLast.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/006_FirstLast.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="007_RepeateTemplate.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/007_RepeateTemplate.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="008_NgCloack.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/008_NgCloack.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.375">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -159,14 +159,14 @@
         <option value="$PROJECT_DIR$/L1/000_HelloWorld.html" />
         <option value="$PROJECT_DIR$/L2/DataBinding/01_OneWayDataBinding.html" />
         <option value="$PROJECT_DIR$/L2/DataBinding/02_TwoWayDataBinding.html" />
-        <option value="$PROJECT_DIR$/L2/TemplateDirectives/003_RepeateKeyValue.html" />
-        <option value="$PROJECT_DIR$/L2/TemplateDirectives/004_$index.html" />
-        <option value="$PROJECT_DIR$/L2/TemplateDirectives/005_EvenOdd.html" />
         <option value="$PROJECT_DIR$/L2/TemplateDirectives/006_FirstLast.html" />
         <option value="$PROJECT_DIR$/L2/TemplateDirectives/007_RepeateTemplate.html" />
         <option value="$PROJECT_DIR$/L2/TemplateDirectives/008_NgCloack.html" />
         <option value="$PROJECT_DIR$/L2/TemplateDirectives/001_NgRepeat.html" />
         <option value="$PROJECT_DIR$/L2/TemplateDirectives/002_RepeatingProperties.html" />
+        <option value="$PROJECT_DIR$/L2/TemplateDirectives/003_RepeateKeyValue.html" />
+        <option value="$PROJECT_DIR$/L2/TemplateDirectives/004_$index.html" />
+        <option value="$PROJECT_DIR$/L2/TemplateDirectives/005_EvenOdd.html" />
       </list>
     </option>
   </component>
@@ -511,30 +511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/003_RepeateKeyValue.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/004_$index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/005_EvenOdd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/006_FirstLast.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -599,6 +575,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/002_RepeatingProperties.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.625">
+          <caret line="17" column="64" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/001_NgRepeat.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.291667">
@@ -607,10 +591,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/002_RepeatingProperties.html">
+    <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/003_RepeateKeyValue.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8509934">
-          <caret line="37" column="57" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
+        <state vertical-scroll-proportion="-18.916666">
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/004_$index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.791667">
+          <caret line="29" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L2/TemplateDirectives/005_EvenOdd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7764901">
+          <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
           <folding />
         </state>
       </provider>

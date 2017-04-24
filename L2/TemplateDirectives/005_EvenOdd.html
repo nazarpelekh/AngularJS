@@ -1,10 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="SampleApp">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>$index</title>
+
+    <!--
+        Template directives - collection of directives, which we can use for generation HTML
+        ng-repeat
+        ng-include
+        ng-cloack
+        ng-repeat-start
+        ng-repeat-end
+        ng-swich
+    -->
+
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+
+    <script>
+        var app = angular.module('SampleApp',[]);
+
+        app.controller('SampleAppCtrl', function ($scope) {
+            $scope.items = [{ name: "Item1", value: "Value1"},
+                { name: "Item2", value: "Value2"},
+                { name: "Item3", value: "Value3"},
+                { name: "Item4", value: "Value4"},
+                { name: "Item5", value: "Value5"}]
+        })
+    </script>
+    <style>
+        .class1 {
+            background-color: lightgreen;
+        }
+        .class2 {
+            background-color: lightblue;
+        }
+    </style>
 </head>
 <body>
+<div ng-controller="SampleAppCtrl">
+    <h3 class="panel-header">Items</h3>
 
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in items">
+            <td>{{$index+1}}</td> <!-- $index integrate variable which consist of iteration number -->
+            <td>{{item.name}}</td>
+            <td>{{item.value}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
 </body>
 </html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-include</title>
+
+    <script src="../../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../../Libraries/bootstrap.css">
+    <link rel="stylesheet" href="../../../Libraries/bootstrap-theme.css">
+
+    <script src="app.js"></script>
+</head>
+<body>
+<div ng-controller="SampleAppCtrl" class="container">
+
+    <!--
+        ng-include - директива для скачування, компіляції і додавання фрагмента HTML в документ
+        URL повинен належати тому ж домену, з якого загружена дана сторінка
+        HTML фрагмент завантажується із сервера з допомогою AJAX запитів
+     -->
+
+    <!-- Варіанти використовування -->
+
+    <h3>HTML element</h3>
+    <ng-include src="url"></ng-include>
+
+
+    <h3>HTML attribute</h3>
+    <span ng-include="url"></span>
+
+
+    <h3>CSS class</h3>
+    <span class="ng-include: url;"></span>
+
+</div>
+</body>
+</html>

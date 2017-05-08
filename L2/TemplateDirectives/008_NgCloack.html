@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="SampleApp">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>ng-cloack</title>
+
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+
+    <script>
+        var app = angular.module('SampleApp',[]);
+
+        app.controller('SampleAppCtrl', function ($scope) {
+            $scope.firstName = "Ivan";
+            $scope.lastName = "Ivanov";
+            $scope.age = "25";
+            $scope.position = "Software Developer";
+        })
+    </script>
 </head>
 <body>
+<div ng-controller="SampleAppCtrl" class="container">
+    <!-- ng-cloack  - директива, яка запобігає відображення шаблону {{}} до того, як додаток буде повністю завантажений.
+     Директива може бути присвоєна елементу body, але рекомендується застосовувати цю директиву декілька раз для невеликих -->
+    <h3 ng-cloak>{{firstName}} {{lastName}}</h3>
+    <p ng-cloak>age: {{age}}</p>
+    <p>position: {{position}}</p> <!-- Елемент буде відображатись до того, як завершиться побудова DOM -->
+    <script>alert("message")</script>
 
+</div>
 </body>
 </html>

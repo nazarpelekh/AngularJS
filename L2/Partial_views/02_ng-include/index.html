@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-include</title>
+
+    <script src="../../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../../Libraries/bootstrap.css">
+    <link rel="stylesheet" href="../../../Libraries/bootstrap-theme.css">
+
+    <script src="app.js"></script>
+</head>
+<body>
+    <div ng-controller="SampleAppCtrl" class="container">
+
+        <!-- При натисканні на кнопки міняється значення url, при цьому відбувається загрузка нового фрагмента -->
+        <div class="btn-group">
+            <button class="btn btn-default" ng-click="showList()">List</button>
+            <button class="btn btn-default" ng-click="showTable()">Table</button>
+        </div>
+
+
+        <ng-include src="url"></ng-include>
+    </div>
+</body>
+</html>

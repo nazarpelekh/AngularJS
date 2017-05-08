@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-options</title>
+
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+
+    <script>
+        var app = angular.module('SampleApp',[]);
+
+        app.controller('SampleAppCtrl', function ($scope) {
+            $scope.items = [{ prop1: 'item 1', prop2: 1},
+                {prop1: "item 2", prop2: 2},
+                {prop1: "item 3", prop2: 3}];
+            $scope.selected = $scope.items[0];
+        })
+    </script>
+</head>
+<body>
+<div ng-controller="SampleAppCtrl" class="container">
+
+    <!--
+    item.prop1 for item in items track by item.prop2
+    використовувати властивість prop1 для текста елемента
+    використовувати властивість prop2 як значення value елемента option
+    обробляти всі елементи? які знаходяться в колекції items
+    -->
+    <select ng-model="selected"
+            ng-options="item.prop1 for item in items track by item.prop2"></select>
+
+    <br>
+    <br>
+    <br>
+
+    selected text: {{selected.prop1}} <br>
+    selected value: {{selected.prop2}}
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-class</title>
+
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+
+    <script>
+        var app = angular.module('SampleApp',[]);
+
+        app.controller('SampleAppCtrl', function ($scope) {
+            $scope.clickHandler = function () {
+                $scope.className = ['test-div', 'lightGreen'];
+            }
+        })
+    </script>
+    <style>
+        .lightGreen {
+            background-color: lightgreen;
+        }
+
+        .lightBlue {
+            background-color: lightblue;
+        }
+
+        .lightCoral {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body ng-controller="SampleAppCtrl">
+<div class="container">
+
+    <button ng-click="clickHandler()">Set classes</button>
+
+    <!-- ng-class – якщо вираз містить масив, кожен елемент масива буде сприйматись як окремий клас -->
+
+    <div ng-class="className">Test</div>
+
+</div>
+</body>
+</html>

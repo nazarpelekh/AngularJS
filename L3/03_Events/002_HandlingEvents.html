@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Handling events</title>
+
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+
+    <script>
+        var app = angular.module('SampleApp',[]);
+
+        app.controller('SampleAppCtrl', function ($scope) {
+
+            $scope.type;
+
+            $scope.handleEvent = function (event) {
+                console.log(event);
+                $scope.type = event.type;
+            };
+
+            $scope.clickHandler = function (color) {
+                alert(color);
+            };
+
+        })
+    </script>
+    <style>
+        div.test {
+            background-color: green;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body ng-controller="SampleAppCtrl">
+    <div class="test" ng-mouseenter="handleEvent($event)" ng-mouseleave="handleEvent($event)">
+        {{type}}
+    </div>
+
+    <ul>
+        <li ng-repeat="item in ['red', 'green', 'blue']" ng-click="clickHandler(item)">{{item}}</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-class</title>
+
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+
+    <script>
+        var app = angular.module('SampleApp',[]);
+
+        app.controller('SampleAppCtrl', function ($scope) {
+
+            $scope.selectedClass = 'lightGreen';
+
+            $scope.className = [{displayName: 'Light Green', value: 'lightGreen'},
+                {displayName: 'Light Blue', value: 'lightBlue'},
+                {displayName: 'Light Coral', value: 'lightCoral'}];
+        })
+    </script>
+    <style>
+        .lightGreen {
+            background-color: lightgreen;
+        }
+
+        .lightBlue {
+            background-color: lightblue;
+        }
+
+        .lightCoral {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body ng-controller="SampleAppCtrl">
+    <div class="container">
+        <div class="row well">
+            <div class="radio" ng-repeat="item in className">
+                <label>
+                    <input type="radio" name="color" ng-model="$parent.selectedClass" value="{{item.value}}">{{item.displayName}}
+                </label>
+            </div>
+        </div>
+
+        <!-- ng-class – дозволяє динамічно встановлювати класи для HTML елементів через прив'язку даних і виразів -->
+        <div class="test-div" ng-class="selectedClass">{{selectedClass}}</div>
+    </div>
+</body>
+</html>

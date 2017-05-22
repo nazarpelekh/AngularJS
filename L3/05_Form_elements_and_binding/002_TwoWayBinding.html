@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="sampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Two Way Binding</title>
+
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+
+    <script>
+        angular.module('sampleApp',[])
+                .controller('defaultCtrl', function ($scope){
+                    $scope.tasks = [
+                        {action: 'Task 1', complete: false},
+                        {action: 'Task 2', complete: true},
+                        {action: 'Task 3', complete: false},
+                        {action: 'Task 4', complete: true}
+                    ];
+                })
+    </script>
+</head>
+<body class="text-center well">
+<div class="panel panel-primary" ng-controller="defaultCtrl">
+
+    <div class="panel-heading">
+        <div class="panel-title">
+            <h3>
+                Не закінчені задачі
+                    <span class="label label-info">
+                        <!--
+                            filter - дозволяє з масиву вибрати набір елементів і повернути їх у вигляді нового масиву
+                            Вираз нижче дозволяж з масива tasks витягнути всі елементи і ті, які будуть містити задане значення і будуть розміщені в новому масиві,
+                            після чого визначається розмірність нового масиву і отриманого значення
+                        -->
+                        {{(tasks | filter : {complete : 'false'}).length}}
+                    </span>
+            </h3>
+        </div>
+    </div>
+    <table class="table">
+        <tr ng-repeat="task in tasks">
+            <td>{{task.action}}</td>
+            <!-- ng-model – двонаправлена прив'язка -->
+            <td><input type="checkbox" ng-model="task.complete"></td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>

@@ -1,10 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="sampleApp">
 <head>
+
+    <!--
+        Змінні валідації:
+
+        $pristine – true якщо користувач не взаємодіював з елементами форми
+        $dirty – true якщо користувач взаємодіяв з елементами форми
+        $valid – true якщо форма валідна
+        $invalid – true якщо форма містить не правильні дані
+        $error – містить інформацію про помилку валідації
+    -->
+
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Basic Validation</title>
+
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+
+    <script>
+        angular.module('sampleApp',[])
+        .controller('defaultCtrl', function ($scope){
+            $scope.addNewUser = function (userDetails) {
+                $scope.message = userDetails.name
+                + " (" + userDetails.email + ") (" + userDetails.agreed + ")";
+            };
+
+            $scope.message = 'Ready';
+        })
+    </script>
 </head>
 <body>
+    <div ng-controller="defaultCtrl" style="width:300px; margin: 10px">
+
+        <!-- При використанні валідації форми через AngularJS необхідно використовувати атрибут name
+         AngularJS використовує стандартні атрибути HTML для валідації.
+         novalidate – HTML5 атрибут, який вказує браузеру, що дану форму не потрібно валідіювати так як валідація буде за допоговою AngularJS
+         -->
+
+        <form name="myForm" novalidate ng-submit="addNewUser(newUser)">
+
+            <div class="well">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <!-- Атрибут required показує, що значення даного елемента є обов'язковим для валідності форми -->
+                    <input name="userName" type="text" class="form-control" ng-model="newUser.name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <!-- Атрибут type="email заставляє AngularJS використовувати регулярний вираз для перевірки формата" -->
+                    <input name="userEmail" type="email" class="form-control" ng-model="newUser.email" required>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="agreed"
+                               ng-model="newUser.agreed" required>
+                        I agree to the terms and conditions
+                    </label>
+                </div>
+                <!--
+                myForm.$invalid для того, щоб працював даний вираз, форма повинна використовувати атрибут name="myForm"
+                $invalid містить значення які визначаються валідність форми: false - помилок у формі нема, true - форма заповнена з помилками
+                -->
+
+                <button type="submit" class="btn btn-primary btn-block" ng-disabled="myForm.$invalid">OK</button>
+
+                <div class="well">
+                    Message: {{message}}
+                    <div>
+                        Valid: {{myForm.$valid}}
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
 
 </body>
 </html>

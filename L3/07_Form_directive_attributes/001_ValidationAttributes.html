@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="sampleApp">
+<head>
+
+    <!--
+    Атрибути для валідації AngularJS
+    ng-minlength - мінімальна кількість введених символів при якому елемент вважається валідним
+    ng-maxlength - максимальна кількість символів при якому елемент вважається валідним
+    ng-pattern - регулярний вираз, який використовується для перевірки валідності елемента
+    ng-required - значення обов"язкове
+    -->
+    
+    <meta charset="UTF-8">
+    <title>Form Directive attributes</title>
+
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+
+    <script>
+        angular.module('sampleApp',[])
+                .controller('defaultCtrl', function ($scope) {
+                    $scope.requiredValue = true;
+                    $scope.matchPattern = new RegExp('[a-z]');
+                })
+    </script>
+    
+</head>
+<body>
+    <div class="panel" style="width:300px;" ng-controller="defaultCtrl">
+
+        <form name="myForm" novalidate>
+            <input name="sample" ng-model="inputValue" ng-required="requiredValue" ng-minlength="3" ng-maxlength="10" ng-pattern="matchPattern">
+
+            <!--
+            Якщо в елемента атрибут type дорівнює email,url,number тоді не потрібно вказувати ng-pattern
+            так як angular вже не використовує його для перевірки на валідність вмістимого елемента
+            -->
+
+            <p>Required Error: {{myForm.sample.$error.required}}</p>
+            <p>Min Length Error: {{myForm.sample.$error.minlength}}</p>
+            <p>Max Length Error: {{myForm.sample.$error.maxlength}}</p>
+            <p>Pattern Error: {{myForm.sample.$error.pattern}}</p>
+            <p>Element Valid: {{myForm.sample.$valid}}</p>
+        </form>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="sampleApp">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Form Directive attributes</title>
+
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+
+    <script>
+        angular.module('sampleApp',[])
+                .controller('defaultCtrl', function ($scope) {})
+    </script>
+
+</head>
+<body>
+<div ng-controller="defaultCtrl">
+
+    <!--
+    ng-true-value - визачає значення, яке буде задано через прив"язку даних (ng-model) властивостей елемента коли
+    ng-false-value - значення для моделі у випадку якщо буде знято
+    -->
+
+    <input name="sample" type="checkbox" ng-model="inputValue" ng-true-value="'yes'" ng-false-value="'no'">
+    <p>Model Value: {{inputValue}}</p>
+</div>
+</body>
+</html>

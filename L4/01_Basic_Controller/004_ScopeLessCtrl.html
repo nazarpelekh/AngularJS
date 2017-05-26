@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="exampleApp">
+<!-- Якщо контроллер не використовує спадкування або не буде кумутувати з іншими контроллерами, тоді можна використовувати scope -->
+<head>
+    <meta charset="UTF-8">
+    <title>ScopeLess</title>
+
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+
+    <script>
+        angular.module('exampleApp',[])
+                .controller('defaultCtrl', function () {
+                    this.dataValue = '-----';
+
+                    this.changeValue = function () {
+                        this.dataValue = 'Hello world!'
+                    }
+                })
+    </script>
+</head>
+<body class="panel panel-primary">
+
+    <!-- defaultCtrl as ctrl - синтаксис визначення scope-less контроллера. Тепер для звернення до даного контроллера використовуємо ctrl  -->
+    <div class="panel-heading" ng-controller="defaultCtrl as ctrl">
+        <h4>ScopeLess Ctrl</h4>
+        <div class="input-group">
+            <span class="input-group-btn">
+                <button class="btn btn-default" ng-click="ctrl.changeValue()">change</button>
+            </span>
+            <input type="text" class="form-control" ng-model="ctrl.dataValue">
+        </div>
+    </div>
+</body>
+</html>

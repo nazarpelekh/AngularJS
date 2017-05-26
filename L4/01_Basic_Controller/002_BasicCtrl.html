@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" ng-app="exampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Controller</title>
+
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+
+    <script>
+        angular.module('exampleApp',[])
+                .controller('defaultCtrl', function ($scope) {
+                    // В контроллерах scope використовується для двох задач:
+                    // 1 - передача в представлення даних
+                    // 2 - визначає поведінку контроллера
+
+                    // дані
+                    $scope.fruit = 'Banana';
+
+                    // поведінка
+                    $scope.getFruit = function (fruit) {
+                        switch (fruit) {
+                            case 'Apple':
+                                return 'Yes!';
+                            case 'Banana':
+                                return 'Nope!';
+                        }
+                    }
+                })
+    </script>
+</head>
+<body>
+    <div class="panel panel-primary" ng-controller="defaultCtrl">
+        <div class="panel-heading">
+            <h4>The fruit is: {{fruit}}</h4>
+            <h4>Do you wan`t it? : {{getFruit(fruit)}}</h4>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" ng-app="exampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Controller</title>
+
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+
+    <script>
+        /* Для створення контроллера використовується функція controller викликаюча на модулі
+         * В якості параметрів у функції controller передається ім'я контроллера і функція, яка буде створювати контроллер.
+         * Функція створююча контроллер також називається фабричною функцією, яка за допомогою запровадженя залежностей отримує $scope й інші сервіси         */
+        angular.module('exampleApp',[]).controller('defaultCtrl',function ($scope) {
+
+        });
+    </script>
+</head>
+<body>
+    <div class="btn btn-primary btn-lg" ng-controller="defaultCtrl">
+        Content
+    </div>
+</body>
+</html>

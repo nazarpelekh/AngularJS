@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="sampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Monolitic</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+
+    <script>
+        var app = angular.module('sampleApp',[])
+                .controller('defaultCtrl', function($scope){
+                    $scope.value = '-----';
+
+                    $scope.setNewValue = function () {
+                        $scope.value = 'Hello world!'
+                    }
+                })
+    </script>
+</head>
+<body>
+<!-- В даному прикладі створюється два екземпляри scope через одну й ту саму фабричну функцію -->
+<!-- Перший екземпляр -->
+<div ng-controller="defaultCtrl">
+{{value}}<br>
+<button ng-click="setNewValue()">Change</button>
+</div>
+<!-- Другий екземпляр -->
+<div ng-controller="defaultCtrl">
+{{value}}<br>
+<button ng-click="setNewValue()">Change</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="sampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Inheritance</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+
+    <script>
+        var app = angular.module('sampleApp',[]);
+
+        app.controller('baseCtrl', function($scope){
+            $scope.value = 'base value';
+
+            $scope.changeValue1 = function () {
+                $scope.value = 'changeValue1 - ' + new Date().toLocaleTimeString()
+            }
+        });
+
+        app.controller('derivedCtrl', function($scope){
+            $scope.changeValue2 = function () {
+                $scope.value = 'changeValue2 - ' + new Date().toLocaleTimeString()
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- baseCtrl - базовий контроллер -->
+    <div ng-controller="baseCtrl">
+        <p>{{value}}</p>
+        <button ng-click="changeValue1()">change value 1</button>
+
+        <!-- derivedCtrl – продуктивний контроллер, так як на ДОМ дереві являється дочірнім елементом для div використовуючи  ng-controller -->
+        <div ng-controller="derivedCtrl">
+            <p>{{value}}</p>
+            <!-- При виконанні changeValue1 змінює значення значення змінної value в базовому scope.  -->
+            <button ng-click="changeValue1()">change value 1</button>
+            <!-- При виконанні changeValue2 відбувається створення нової value.  -->
+            <button ng-click="changeValue2()">change value 2</button>
+        </div>
+    </div>
+</body>
+</html>

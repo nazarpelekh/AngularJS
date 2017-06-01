@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="sampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Inheritance</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+
+    <script>
+        var app = angular.module('sampleApp',[]);
+
+        app.controller('baseCtrl', function($scope){
+            // ссилочний тип даних (на відміну від попереднього прикладу)
+            $scope.value = { data: 'base value'};
+
+            $scope.changeValue1 = function () {
+                $scope.value.data = 'changeValue1 - ' + new Date().toLocaleTimeString()
+            }
+        });
+
+        app.controller('derivedCtrl', function($scope){
+            $scope.changeValue2 = function () {
+                $scope.value.data = 'changeValue2 - ' + new Date().toLocaleTimeString()
+            }
+        });
+    </script>
+</head>
+<body>
+<div ng-controller="baseCtrl">
+    <p>{{value.data}}</p>
+    <button ng-click="changeValue1()">change value 1</button>
+
+    <div ng-controller="derivedCtrl">
+        <p>{{value.data}}</p>
+        <button ng-click="changeValue1()">change value 1</button>
+        <!-- так як value ссилочний тип даних, зміни внесені в похідну контроллера не відносяться до створення нових змінних -->
+        <button ng-click="changeValue2()">change value 2</button>
+    </div>
+</div>
+</body>
+</html>

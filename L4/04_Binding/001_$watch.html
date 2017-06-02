@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="sampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>$watch example</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+
+    <script>
+        angular.module('sampleApp',[]).controller('defaultCtrl', function ($scope, $interval) {
+
+            $scope.counter = 0;
+
+            // $watch реєструє функцію в колекції $$watchers поточного scope
+            // функціія буде виконуватись при кожній зміні властивостей counter
+            $scope.$watch('counter', function (newValue, oldValue) {
+                console.log('Старе значення - ' + oldValue + ', нове значення - ' + newValue);
+            })
+
+            $scope.increment = function (val) {
+                $scope.counter += val;
+            }
+
+            // $interval - сервіс, який використовується для запуску задач через заданий інтервал часу
+            $interval(function () {
+                $scope.counter++;
+            }, 1000)
+
+            console.log($scope.$$watchers)
+
+        })
+    </script>
+</head>
+<body>
+<div ng-controller="defaultCtrl">
+    {{counter}}
+    <button ng-click="increment(1)">+1</button>
+</div>
+</body>
+</html>

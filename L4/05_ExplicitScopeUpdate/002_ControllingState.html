@@ -1,0 +1,78 @@
+<!doctype html>
+<html ng-app="sampleApp">
+
+<!-- При використанні сторонніх бібліотек часто доводиться самостійно контролюват процес оновлення scope
+     В наступних прикладах показано як можна оновлювати scope при використанні бібліотеки jQuery UI
+ -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>$watch example</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link rel="stylesheet" href="../../Libraries/bootstrap-theme.css">
+    <link rel="stylesheet" href="../../Libraries/bootstrap.css">
+
+    <!-- Use jQuery UI -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="jquery-ui.min.css">
+
+    <script>
+        $(document).ready(function () {
+            $('#jQueryUI button').button().click(function (e) {
+                alert('jQuery Button')
+            })
+        });
+
+        angular.module('sampleApp',[]).controller('defaultCtrl', function ($scope) {
+
+            $scope.buttonEnabled = true;
+            $scope.clickCounter = 0;
+
+            $scope.clickHandler = function () {
+                $scope.clickCounter++;
+            };
+
+            // $watch(expression, handler) - встановлення обробника, який буде спрацьовувати при зміні вказаного значення
+            $scope.$watch('buttonEnabled', function (newValue) {
+                $('#jQueryUI button').button({
+                    disabled: !newValue
+                })
+            })
+
+        });
+    </script>
+</head>
+<body>
+<body class="row text-center">
+<div class="col-xs-6">
+    <div id="angularRegion" class="panel panel-success" ng-controller="defaultCtrl">
+        <div class="panel-heading">
+            <h4>AngularJS</h4>
+        </div>
+        <div class="panel-body">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="buttonEnabled">
+                    Enable button
+                </label>
+            </div>
+            <p>Click counter: {{clickCounter}}</p>
+        </div>
+    </div>
+</div>
+<div class="col-xs-6">
+    <div id="jQueryUI" class="panel panel-primary">
+        <div class="panel-heading">
+            <h4>jQuery UI</h4>
+        </div>
+        <div class="panel-body">
+            <button class="btn btn-primary">
+                <h4>Click me!</h4>
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</body>
+</html>
